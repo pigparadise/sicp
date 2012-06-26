@@ -1,5 +1,5 @@
+;; compare old_guess and new_guess to stop
 (newline)
-
 (define (sqrt-iter old_guess new_guess x)
   (display "iter:")(display old_guess)(display ",")(display new_guess)(newline)
   (if (good-enough? old_guess new_guess)

@@ -1,4 +1,4 @@
-;; 视图找出if 和 new-if 的区别
+;; try find difference between if and new-if
 (define (func_a)
   (display "a")
 )

@@ -1,3 +1,4 @@
+;; just like 1.7.scm
 (newline)
 
 (define (cubic-root-iter old_guess new_guess x)
