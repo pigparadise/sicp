@@ -1,0 +1,31 @@
+(define (estimate-pi trials)
+  (define a (monte-carlo trials cesaro-test))
+  (display "rate: ")(display a)(newline)
+  (sqrt (/ 6 a))
+)
+
+(define (rand) (random 100000000))
+(define (cesaro-test)
+  (= (gcd (rand) (rand)) 1)
+)
+
+(define (monte-carlo trials experiment)
+  (define (iter trials-remaining trials-passed)
+    (cond ((= trials-remaining 0) 
+           (display 'npassed: ) (display trials-passed)(newline)
+           (/ trials-passed trials)
+          )
+          ((experiment)
+           (iter (- trials-remaining 1) (+ trials-passed 1))
+          )
+          (else 
+           (iter (- trials-remaining 1) trials-passed)
+          )
+    )
+  )
+
+  (iter trials 0)
+)
+
+(newline)
+(estimate-pi 1000000)

@@ -1,0 +1,3 @@
+give up ...
+
+http://eli.thegreenplace.net/2007/09/27/sicp-sections-312-313/
